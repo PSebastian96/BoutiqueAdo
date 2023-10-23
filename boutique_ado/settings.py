@@ -127,7 +127,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-ITE_ID = 1
+SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
