@@ -10,7 +10,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    {% endblock %} {% block extra_meta %} {% enblock %} {% block corecss %}
+    {% endblock %} {% block extra_meta %} {% endblock %} {% block corecss %}
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -18,7 +18,7 @@
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
       crossorigin="anonymous"
     />
-    {% endblock %} {% block extra_css %} {% enblock %} {% block corejs %}
+    {% endblock %} {% block extra_css %} {% endblock %} {% block corejs %}
     <!-- JS and JQuery  section -->
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
@@ -30,9 +30,9 @@
       integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
       crossorigin="anonymous"
     ></script>
-    {% endblock %} {% block extra_js %} {% enblock %}
+    {% endblock %} {% block extra_js %} {% endblock %}
 
-    <title>Boutique Ado {% block extra_title %} {% enblock %}</title>
+    <title>Boutique Ado {% block extra_title %} {% endblock %}</title>
   </head>
 
   <body>
@@ -40,16 +40,8 @@
 
     {% if messages %}
     <div class="message-container"></div>
-    {% endif %}
-
-    {% block page_header %}
-    {% endblock %}
-
-    {% block content %}
-    {% endblock %}
-
-    {% block postloadjs %}
-    {% endblock %}
-    
+    {% endif %} {% block page_header %} {% endblock %} {% block content %}
+    <h1>random text</h1>
+    {% endblock %} {% block postloadjs %} {% endblock %}
   </body>
 </html>
