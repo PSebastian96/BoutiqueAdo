@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% block meta %}
     <!-- Required meta tags -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta charset="utf-8" />
@@ -9,7 +10,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
+    {% endblock %} {% block extra_meta %} {% enblock %} {% block corecss %}
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -17,7 +18,7 @@
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
       crossorigin="anonymous"
     />
-
+    {% endblock %} {% block extra_css %} {% enblock %} {% block corejs %}
     <!-- JS and JQuery  section -->
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
@@ -29,9 +30,26 @@
       integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
       crossorigin="anonymous"
     ></script>
+    {% endblock %} {% block extra_js %} {% enblock %}
 
-    <title>Boutique Ado</title>
+    <title>Boutique Ado {% block extra_title %} {% enblock %}</title>
   </head>
 
-  <body></body>
+  <body>
+    <header class="container-fluid fixed-top"></header>
+
+    {% if messages %}
+    <div class="message-container"></div>
+    {% endif %}
+
+    {% block page_header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block postloadjs %}
+    {% endblock %}
+    
+  </body>
 </html>
