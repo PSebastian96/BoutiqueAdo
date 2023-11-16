@@ -1,3 +1,9 @@
-from django.shortcuts import render, redirect, reverse
-from django.contrib import messages
+from django.apps import AppConfig
 
+
+class CheckoutConfig(AppConfig):
+    name = 'checkout'
+
+
+    def ready(self):
+        import checkout.signals
