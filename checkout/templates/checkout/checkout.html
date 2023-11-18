@@ -52,8 +52,9 @@
         <div class="col-7">
           <p class="my-0"><strong>{{ item.product.name }}</strong></p>
           <p class="my-0 small">
-            Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else
-            %}N/A{% endif %}
+            Size: {% if item.product.has_sizes %}{{ item.size|upper }}
+            <!---->
+            {% else %}N/A{% endif %}
           </p>
           <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
         </div>
@@ -98,6 +99,7 @@
           <legend class="fieldset-label small text-black px-2 w-auto">
             Delivery
           </legend>
+          <!---->
           {{ order_form.phone_number | as_crispy_field }}
           <!---->
           {{ order_form.country | as_crispy_field }}
@@ -106,9 +108,9 @@
           <!---->
           {{ order_form.town_or_city | as_crispy_field }}
           <!---->
-          {{order_form.street_address1 | as_crispy_field }}
+          {{ order_form.street_address1 | as_crispy_field }}
           <!---->
-          {{ order_form.street_address2 | as_crispy_field }}
+          {{order_form.street_address2 | as_crispy_field }}
           <!---->
           {{ order_form.county | as_crispy_field }}
           <div class="form-check form-check-inline float-right mr-0">
@@ -175,6 +177,13 @@
       </form>
     </div>
   </div>
+</div>
+<div id="loading-overlay">
+  <h1 class="text-light logo-font loading-spinner">
+    <span class="icon">
+      <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+    </span>
+  </h1>
 </div>
 {% endblock %} {% block postloadjs %} {{ block.super }}
 <!---->
