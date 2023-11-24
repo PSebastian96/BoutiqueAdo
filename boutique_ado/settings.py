@@ -28,7 +28,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['django-botique-ado-682bb32b603d.herokuapp.com']
+ALLOWED_HOSTS = [
+    '8000-psebastian96-boutiqueado-hjcl5kc96m.us2.codeanyapp.com',
+    'django-botique-ado-682bb32b603d.herokuapp.com']
 
 
 # Application definition
