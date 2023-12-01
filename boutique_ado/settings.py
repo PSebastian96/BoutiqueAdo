@@ -30,7 +30,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-psebastian96-boutiqueado-hjcl5kc96m.us2.codeanyapp.com',
-    'django-botique-ado-682bb32b603d.herokuapp.com']
+    'django-boutique-ado1-2b36b26f19e3.herokuapp.com']
 
 
 # Application definition
