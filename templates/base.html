@@ -103,8 +103,9 @@
                 class="dropdown-menu border-0"
                 aria-labelledby="user-options"
               >
-                {% if request.user.is_authenticated %} {% if
-                request.user.is_superuser %}
+                {% if request.user.is_authenticated %}
+                <!---->
+                { % if request.user.is_superuser %}
                 <a href="{% url 'add_product' %}" class="dropdown-item"
                   >Product Management</a
                 >
@@ -133,8 +134,9 @@
                 <div class="text-center">
                   <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                   <p class="my-0">
-                    {% if grand_total %} ${{ grand_total|floatformat:2 }} {%
-                    else %} $0.00 {% endif %}
+                    {% if grand_total %} ${{ grand_total|floatformat:2 }}
+                    <!---->
+                    {% else %} $0.00 {% endif %}
                   </p>
                 </div>
               </a>
@@ -155,8 +157,9 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          {% include 'includes/mobile-top-header.html' %} {% include
-          'includes/main-nav.html' %}
+          {% include 'includes/mobile-top-header.html' %}
+          <!---->
+          {% include 'includes/main-nav.html' %}
         </nav>
       </div>
       <div id="delivery-banner" class="row text-center">
@@ -170,15 +173,21 @@
 
     {% if messages %}
     <div class="message-container">
-      {% for message in messages %} {% with message.level as level %} {% if
-      level == 40 %} {% include 'includes/toasts/toast_error.html' %} {% elif
-      level == 30 %} {% include 'includes/toasts/toast_warning.html' %} {% elif
-      level == 25 %} {% include 'includes/toasts/toast_success.html' %} {% else
-      %} {% include 'includes/toasts/toast_info.html' %} {% endif %} {% endwith
-      %} {% endfor %}
+      {% for message in messages %} {% with message.level as level %}
+      <!---->
+      {% if level == 40 %} {% include 'includes/toasts/toast_error.html' %}
+      <!---->
+      {% elif level == 30 %} {% include 'includes/toasts/toast_warning.html' %}
+      <!---->
+      {% elif level == 25 %} {% include 'includes/toasts/toast_success.html' %}
+      <!---->
+      {% else %} {% include 'includes/toasts/toast_info.html' %} {% endif %}
+      <!---->
+      {% endwith %} {% endfor %}
     </div>
-    {% endif %} {% block page_header %} {% endblock %} {% block content %} {%
-    endblock %} {% block postloadjs %}
+    {% endif %} {% block page_header %} {% endblock %} {% block content %}
+    <!---->
+    {% endblock %} {% block postloadjs %}
     <script type="text/javascript">
       $(".toast").toast("show");
     </script>
